@@ -1,8 +1,27 @@
 import Head from 'next/head'
 import React from 'react'
 import Sidebar from './Sidebar'
+import useStore from '@/hooks/useStore';
+import Modal from 'react-modal'
+import Modalproduct from './Modalproduct';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const customStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+    },
+};
+
+Modal.setAppElement('#__next');
 
 export default function Layout({children, page}) {
+    const {modal, handleChangeModal} = useStore()
     return (
         <>
             <Head>
@@ -23,6 +42,14 @@ export default function Layout({children, page}) {
                 </main>
             </div>
 
+            {modal && (
+                <Modal isOpen={modal} style={customStyles}
+                >
+                    <Modalproduct />
+                </Modal>
+            )}
+
+            <ToastContainer />
         </>
     )
 }
