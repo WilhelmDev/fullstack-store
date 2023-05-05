@@ -4,6 +4,7 @@ import Sidebar from './Sidebar'
 import useStore from '@/hooks/useStore';
 import Modal from 'react-modal'
 import Modalproduct from './Modalproduct';
+import StepBar from './StepBar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -37,6 +38,7 @@ export default function Layout({children, page}) {
                 
                 <main className=' md:w-9/12 h-screen overflow-y-scroll'>
                     <div className='p-10'>
+                        <StepBar />
                         {children}
                     </div>
                 </main>
