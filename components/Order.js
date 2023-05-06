@@ -16,7 +16,7 @@ export default function Order({orderItem}) {
     
     return (
         <>
-            <div className='border border-amber-400 p-10 space-y-5 rounded mb-2'>
+            <div className='border shadow p-10 space-y-5 rounded mb-2'>
                 <h3 className=" text-2xl font-bold">Orden: {id}</h3>
                 <p className="text-lg my-10 font-bold">Cliente: {name}</p>
 
